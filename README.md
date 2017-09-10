@@ -1,6 +1,21 @@
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
-   
+
+## Introduction 
+This project I found was the most difficult & challenging so far in the CarND Nanodegree. It involved a multitude of disciplines from application of Jerk Minimizing Trajectories to Freenet coordinate transformation, extrapolations with splines and overall a complex application in C++
+
+## Concept
+I struggled a lot with this project and ultimately the Q&A provided by the udacity team helped me to structure this project. The concept of this project is shown below:
+![Concept for Path Planning Project](Concept.jpg)
+
+The program is split into 4 Classes and the main program:
+- Map: The map class stores all the waypoints provided by the highway_map.css, the splines that connect them and functionality to map Freenet coordinates back to XY coordinates along those splines.
+- Road / Lanes: The road class stores 
+-- the state of the individual lanes (left, right, center) with all the cars coming from the sensor fusion, 
+
+
+## Original Documentation
+
 ### Simulator. You can download the Term3 Simulator BETA which contains the Path Planning Project from the [releases tab](https://github.com/udacity/self-driving-car-sim/releases).
 
 In this project your goal is to safely navigate around a virtual highway with other traffic that is driving +-10 MPH of the 50 MPH speed limit. You will be provided the car's localization and sensor fusion data, there is also a sparse map list of waypoints around the highway. The car should try to go as close as possible to the 50 MPH speed limit, which means passing slower traffic when possible, note that other cars will try to change lanes too. The car should avoid hitting other cars at all cost as well as driving inside of the marked road lanes at all times, unless going from one lane to another. The car should be able to make one complete loop around the 6946m highway. Since the car is trying to go 50 MPH, it should take a little over 5 minutes to complete 1 loop. Also the car should not experience total acceleration over 10 m/s^2 and jerk that is greater than 50 m/s^3.
