@@ -1,3 +1,4 @@
+
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
 
@@ -12,8 +13,14 @@ The program is split into 4 Classes and the main program:
 - Map: The map class stores all the waypoints provided by the highway_map.css, the splines that connect them and functionality to map Freenet coordinates back to XY coordinates along those splines.
 - Road / Lanes: The road class stores the state of the individual lanes (left, right, center) with all the cars coming from the sensor fusion, but also contains the helper functions safe(), free() and lane_change_available() - to check whether the current lane is safe (car ahead not too close), whether a target lane is free (car ahead or behind not too close to switch) and whether a lane change is available (using the free() function).
 - Car / Vehicle: The car class contains the basic attributes of a car (the own car and all surrounding cars) such as id, x, y, v, s, d,  yaw, previous_s and previous_d. It also offers helper functions to access these attributes and set the such as get_d() or set_previous_s()
-- Planner: The planner class is responsible to plan the car trajectory for every step of the way. It's called by the main algorithm every 0.02 seconds and returns a set of x and y points for the car to follow. By default the state of the planner is in "start", i.e. it will generate a trajectory that follows the current path for the consecutive 4 cycles (each 50 points / 1 sec). Following that it will check each time the trajectory points go below 50 if current lane is safe. If yes the trajectory will be generated to stay, if not, a trajectory will be generated to change lane if possible or otherwise slow down. The trajectory is generated using the JWT algorithim explained during class to get the final X and Y points for the car to follow.
+- Planner: The planner class is responsible to plan the car trajectory for every step of the way. It's called by the main algorithm every 0.02 seconds and returns a set of x and y points for the car to follow. By default the state of the planner is in "start", i.e. it will generate a trajectory that follows the current path for the consecutive 4 cycles (each 50 points / 1 sec). Following that it will check each time the trajectory points go below 50 if current lane is safe. If yes the trajectory will be generated to stay, if not, a trajectory will be generated to change lane if possible or otherwise slow down. The trajectory is generated using the JMT algorithim explained during class to get the final X and Y points for the car to follow.
 - Constant: Contain a set of constants that are used throughout the program and can be used for tweaking the algorithm
+
+## Reflection
+Apart from handing in the project with 1 month delay, although I was working heavily on this project I still feel that I could not have done this project with help through the Q&A sessions and colleagues of mine. In addition, I feel that altough the algorithm performs as expected and should fulfill the project criteria, there's still many things we learned during this specific lecture that is not applied here. Specifically:
+- The algorithm does not take into account other car's movement, expected behaviour, predicted path for them etc. as we did using naive bayes during the lectures.
+- The algorithm does not use any cost function apart from what's included by default in the JMT algorithm to plan the path. Furthermore a path to reach a specific d/s combination could not be achieved using this algorithm as it stands.
+
 
 
 ## Original Documentation
